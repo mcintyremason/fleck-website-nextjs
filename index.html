@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fleck Roofing & Construction — BACKUP COPY (Base Format)</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #fff;
+        color: #000;
+      }
+      header {
+        background-color: #fff;
+        color: #000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        flex-wrap: wrap;
+        gap: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+      header .branding {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      header img {
+        max-width: 160px;
+      }
+      header h1 {
+        margin: 10px 0 5px;
+        font-size: 1.8em;
+        color: #000;
+      }
+      header p.tagline {
+        margin: 0;
+        font-style: italic;
+        font-size: 1.2em;
+        color: #ffd700;
+        font-weight: bold;
+      }
+      .call-button a {
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 6px;
+        padding: 10px 18px;
+        transition: all 0.3s ease;
+        background-color: #ff0000;
+        color: #fff;
+        border: 2px solid #ff0000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      .call-button a:hover {
+        background-color: #cc0000;
+        border-color: #cc0000;
+      }
+
+      /* HERO */
+      .hero {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        padding: 60px 30px;
+        color: #000;
+        text-align: left;
+        background: url("Clarendon Dr.png") no-repeat center center/cover;
+        position: relative;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.55);
+        z-index: 1;
+      }
+      .hero-content,
+      .estimate-form {
+        position: relative;
+        z-index: 2;
+      }
+      .hero-content {
+        max-width: 600px;
+        flex: 1;
+      }
+      .hero h2 {
+        font-size: 2.4em;
+        margin-bottom: 25px;
+        line-height: 1.3;
+        color: #fff;
+      }
+      .hero p.mission {
+        font-size: 1.5em;
+        line-height: 2;
+        color: #fff;
+      }
+      .highlight-white {
+        font-weight: bold;
+        color: #fff;
+      }
+      .estimate-form {
+        max-width: 500px;
+        width: 100%;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        border: 2px solid #000;
+        box-sizing: border-box;
+      }
+      .estimate-form h3 {
+        margin-top: 0;
+        color: #ff0000;
+        text-align: center;
+        font-size: 2.4em;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+      .estimate-form input,
+      .estimate-form select,
+      .estimate-form textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-top: 8px;
+        margin-bottom: 12px;
+        font-size: 1rem;
+        box-sizing: border-box;
+      }
+      .estimate-form button {
+        margin-top: 5px;
+        background-color: #ff0000;
+        color: #fff;
+        border: none;
+        padding: 16px 24px;
+        border-radius: 6px;
+        font-weight: bold;
+        font-size: 1.2em;
+        cursor: pointer;
+        width: 100%;
+        box-sizing: border-box;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      .estimate-form button:hover {
+        background-color: #cc0000;
+      }
+
+      footer {
+        background-color: #111;
+        color: #fff;
+        text-align: center;
+        padding: 20px 10px;
+        font-size: 0.9em;
+      }
+      footer a {
+        color: #ffd700;
+        text-decoration: none;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 640px) {
+        .hero {
+          flex-direction: column;
+          text-align: center;
+        }
+        .hero h2 {
+          font-size: 2em;
+        }
+        .hero p.mission {
+          font-size: 1.2em;
+          line-height: 1.8;
+        }
+        header .branding {
+          width: 100%;
+        }
+        .call-button {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+      }
+
+      .sticky-text-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 9999;
+        background-color: #ff0000;
+        color: #fff;
+        border: 2px solid #ff0000;
+        border-radius: 9999px;
+        padding: 12px 18px;
+        font-weight: bold;
+        text-decoration: none;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+        transition: all 0.2s ease;
+      }
+      .sticky-text-btn:hover {
+        background-color: #cc0000;
+        border-color: #cc0000;
+      }
+      @media (max-width: 640px) {
+        .sticky-text-btn {
+          padding: 14px 20px;
+        }
+      }
+
+      /* SERVICES */
+      .services {
+        background: #f7f7f7;
+        padding: 50px 20px;
+      }
+      .services-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .services h2 {
+        text-align: center;
+        font-size: 2em;
+        margin: 0 0 10px;
+      }
+      .services-intro {
+        text-align: center;
+        max-width: 820px;
+        margin: 0 auto 30px;
+        color: #444;
+      }
+
+      .service-row {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 24px;
+        align-items: center;
+        margin-bottom: 70px;
+      }
+      .service-row:nth-child(even) {
+        grid-template-columns: 0.7fr 1.3fr;
+      }
+      .service-media {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        min-height: 420px;
+      }
+      .service-media img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .service-overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.45);
+        gap: 16px;
+      }
+      .service-overlay h3 {
+        color: #ffd700;
+        font-size: 2.8rem;
+        margin: 0;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.85);
+        text-align: center;
+        padding: 0 8px;
+      }
+      .service-overlay button {
+        background: #ff0000;
+        color: #fff;
+        border: 2px solid #ff0000;
+        padding: 18px 28px;
+        border-radius: 6px;
+        font-weight: bold;
+        font-size: 1.3em;
+        cursor: pointer;
+      }
+      .service-overlay button:hover {
+        background: #cc0000;
+        border-color: #cc0000;
+      }
+
+      .service-copy {
+        font-size: 1.2rem;
+        line-height: 1.85;
+        color: #000;
+        font-weight: normal;
+      }
+      .service-copy p {
+        margin: 0;
+      }
+      .highlight {
+        font-weight: bold;
+        color: #000;
+      }
+
+      @media (max-width: 840px) {
+        .service-row {
+          grid-template-columns: 1fr;
+        }
+        .service-row .service-media {
+          order: -1;
+          min-height: 280px;
+        }
+      }
+
+      /* WHO WE ARE */
+      .who-we-are {
+        background: #fff;
+        padding: 60px 20px;
+      }
+      .who-inner {
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .who-we-are h2 {
+        font-size: 2.2em;
+        margin-bottom: 20px;
+        color: #000;
+      }
+      .who-we-are p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: #333;
+        margin-bottom: 20px;
+      }
+      .who-photo {
+        margin-top: 30px;
+      }
+      .who-photo img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      /* WORK & REVIEWS */
+      .work-reviews {
+        background: #f7f7f7;
+        padding: 60px 20px;
+      }
+      .work-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .work-reviews h2 {
+        text-align: center;
+        font-size: 2em;
+        margin: 0 0 10px;
+      }
+      .work-reviews p.intro {
+        text-align: center;
+        color: #444;
+        margin: 0 0 30px;
+      }
+
+      /* Carousel */
+      .carousel {
+        position: relative;
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        background: #000;
+      }
+      .carousel-track {
+        display: flex;
+        transition: transform 0.4s ease;
+      }
+      .slide {
+        min-width: 100%;
+        height: 420px;
+        position: relative;
+      }
+      .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.55);
+        color: #fff;
+        border: none;
+        font-size: 1.4rem;
+        padding: 10px 14px;
+        cursor: pointer;
+        border-radius: 6px;
+      }
+      .carousel-btn:hover {
+        background: rgba(0, 0, 0, 0.75);
+      }
+      .prev {
+        left: 12px;
+      }
+      .next {
+        right: 12px;
+      }
+      .dots {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+        margin-top: 10px;
+      }
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #ccc;
+        cursor: pointer;
+      }
+      .dot.active {
+        background: #ff0000;
+      }
+
+      /* Reviews */
+      .reviews {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 24px;
+        align-items: start;
+      }
+      .google-rating {
+        background: #fff;
+        border: 2px solid #000;
+        border-radius: 12px;
+        padding: 18px;
+        text-align: center;
+      }
+      .google-rating .stars {
+        font-size: 1.2rem;
+        color: #ffd700;
+        letter-spacing: 2px;
+      }
+      .google-rating .score {
+        font-size: 2.2rem;
+        font-weight: bold;
+        margin: 8px 0 4px;
+      }
+      .google-rating .count {
+        color: #555;
+        font-size: 0.95rem;
+      }
+
+      .review-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .review-card {
+        background: #fff;
+        border: 1px solid #e5e5e5;
+        border-radius: 10px;
+        padding: 14px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      }
+      .review-card .name {
+        font-weight: bold;
+        margin-bottom: 6px;
+      }
+      .review-card .stars {
+        color: #ffd700;
+        font-size: 1rem;
+      }
+      .review-card .body {
+        margin-top: 6px;
+        color: #222;
+        line-height: 1.5;
+        font-size: 0.98rem;
+      }
+      .reviews-cta {
+        text-align: right;
+        margin-top: 10px;
+      }
+      .reviews-cta a {
+        display: inline-block;
+        background: #ff0000;
+        color: #fff;
+        border: 2px solid #ff0000;
+        border-radius: 6px;
+        padding: 10px 14px;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      .reviews-cta a:hover {
+        background: #cc0000;
+        border-color: #cc0000;
+      }
+
+      @media (max-width: 980px) {
+        .reviews {
+          grid-template-columns: 1fr;
+        }
+        .review-list {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="branding">
+        <img
+          src="Fleck - Main Logo - Capitalized-Enlarged.png"
+          alt="Fleck Roofing & Construction Logo"
+        />
+        <h1>Fleck Roofing & Construction</h1>
+        <p class="tagline">We're the Guys that Keep You Dry</p>
+      </div>
+      <div class="call-button">
+        <a href="tel:+16102500737">☎ Call Now</a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h2>
+          Proudly Serving Easton and the Greater Lehigh Valley for 35+ Years
+        </h2>
+        <p class="mission">
+          For more than three decades, Fleck Roofing & Construction has combined
+          family values with expert roofing
+          <span class="highlight-white">replacements</span>,
+          <span class="highlight-white">repairs</span>, siding, and gutters.
+          Proudly serving Easton and the greater Lehigh Valley, we are built on
+          <span class="highlight-white">craftsmanship</span>,
+          <span class="highlight-white">quality</span>, and
+          reliability—delivering lasting results for homes and businesses across
+          our community.
+        </p>
+      </div>
+      <div class="estimate-form">
+        <h3>Request a Free Estimate</h3>
+        <form>
+          <input type="text" id="name" name="name" placeholder="Name" />
+          <input type="text" id="number" name="number" placeholder="Number" />
+          <input
+            type="text"
+            id="address"
+            name="address"
+            placeholder="Address"
+          />
+          <input type="email" id="email" name="email" placeholder="Email" />
+          <select id="service" name="service">
+            <option value="" selected disabled>Select a Service Type</option>
+            <option value="roof-replacement">Roof Replacement</option>
+            <option value="roof-repair">Roof Repair</option>
+            <option value="siding">Siding</option>
+            <option value="gutters">Gutters</option>
+            <option value="soffit-fascia">Soffit & Fascia</option>
+          </select>
+          <textarea
+            id="notes"
+            name="notes"
+            rows="4"
+            placeholder="Notes"
+          ></textarea>
+          <label for="photos">Upload Photos:</label>
+          <input
+            type="file"
+            id="photos"
+            name="photos"
+            accept="image/*"
+            multiple
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services" id="services">
+      <div class="services-inner">
+        <h2>Roofing & Exterior Services</h2>
+        <p class="services-intro">
+          Family-owned & trusted in Easton and the Greater Lehigh Valley for 35+
+          years. <span class="highlight">Quality</span> workmanship at a fair
+          price — from small <span class="highlight">repairs</span> to full
+          <span class="highlight">replacements</span>.
+        </p>
+
+        <!-- Row 1: Roof Replacement (Image Left, Text Right) -->
+        <div class="service-row">
+          <div class="service-media">
+            <img src="roof-replacement.jpg" alt="Roof Replacement" />
+            <div class="service-overlay">
+              <h3>Roof Replacement</h3>
+              <button onclick="selectService('roof-replacement')">
+                Get Estimate
+              </button>
+            </div>
+          </div>
+          <div class="service-copy">
+            <p>
+              Durable, manufacturer-certified installs for asphalt shingles,
+              metal, and flat roofing systems.
+            </p>
+          </div>
+        </div>
+
+        <!-- Row 2: Roof Repair (Image Right, Text Left) -->
+        <div class="service-row">
+          <div class="service-copy">
+            <p>
+              Leak diagnostics, storm damage, missing shingles, flashing &
+              chimney <span class="highlight">repairs</span> — we keep you dry.
+            </p>
+          </div>
+          <div class="service-media">
+            <img src="roof-repair.jpg" alt="Roof Repair" />
+            <div class="service-overlay">
+              <h3>Roof Repair</h3>
+              <button onclick="selectService('roof-repair')">
+                Get Estimate
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 3: Siding (Image Left, Text Right) -->
+        <div class="service-row">
+          <div class="service-media">
+            <img src="siding.jpg" alt="Siding" />
+            <div class="service-overlay">
+              <h3>Siding</h3>
+              <button onclick="selectService('siding')">Get Estimate</button>
+            </div>
+          </div>
+          <div class="service-copy">
+            <p>
+              Vinyl, fiber cement, and composite siding — full installations and
+              expert <span class="highlight">repairs</span> to protect and
+              beautify your home.
+            </p>
+          </div>
+        </div>
+
+        <!-- Row 4: Gutters (Image Right, Text Left) -->
+        <div class="service-row">
+          <div class="service-copy">
+            <p>
+              Seamless aluminum gutters, downspouts, and leaf guards — plus leak
+              fixes, pitch corrections, and
+              <span class="highlight">repairs</span> to keep water flowing.
+            </p>
+          </div>
+          <div class="service-media">
+            <img src="gutters.jpg" alt="Gutters" />
+            <div class="service-overlay">
+              <h3>Gutters</h3>
+              <button onclick="selectService('gutters')">Get Estimate</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 5: Soffit & Fascia (Image Left, Text Right) -->
+        <div class="service-row">
+          <div class="service-media">
+            <img src="soffit-fascia.jpg" alt="Soffit & Fascia" />
+            <div class="service-overlay">
+              <h3>Soffit &amp; Fascia</h3>
+              <button onclick="selectService('soffit-fascia')">
+                Get Estimate
+              </button>
+            </div>
+          </div>
+          <div class="service-copy">
+            <p>
+              Ventilated soffit and protective fascia board solutions — with
+              <span class="highlight">repair</span> services to maintain proper
+              airflow and roof edge protection.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="trust-bar"
+          style="
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            background: #000;
+            color: #ffd700;
+            border: 2px solid #000;
+            border-radius: 10px;
+            padding: 14px 16px;
+            text-align: center;
+            font-weight: bold;
+          "
+        >
+          <div>✔️ Family-Owned & Operated</div>
+          <div>✔️ 35+ Years Serving the Lehigh Valley</div>
+          <div>✔️ Licensed • Insured • Local</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO WE ARE SECTION -->
+    <section class="who-we-are" id="who-we-are">
+      <div class="who-inner">
+        <h2>Who We Are</h2>
+        <p>
+          Fleck Roofing & Construction is a
+          <strong>family-owned, full-service exterior contractor</strong> rooted
+          in Easton and serving the Greater Lehigh Valley. For over 35 years,
+          we’ve built our reputation on <strong>quality</strong>, integrity, and
+          <strong>craftsmanship</strong>.
+        </p>
+        <p>
+          We specialize in residential and commercial projects, offering expert
+          roofing <strong>replacements</strong>, precise roof
+          <strong>repairs</strong>, siding, gutters, and soffit & fascia work.
+          Our goal is to treat every home or business like our own: clear
+          communication, dependable timelines, and durable results using
+          top-tier materials — often backed by industry certifications and
+          warranties.
+        </p>
+        <p>
+          As a certified AtlasPRO+ Platinum Select Contractor, we’ve earned the
+          trust and training to deliver enhanced warranties and performance.
+          We’re fully licensed, insured, and committed to local customers —
+          providing emergency <strong>repairs</strong>, maintenance, and
+          long-term solutions across the Lehigh Valley.
+        </p>
+        <p>
+          We aren’t just contractors — we aim to be your lifelong partner in
+          protection and peace of mind for your property.
+        </p>
+        <div class="who-photo">
+          <img
+            src="2E4AFDF1-2A04-42AA-845F-8A5ACCDDACFA.jpeg"
+            alt="Fleck Roofing & Construction Team at Community Event"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- PREVIOUS WORK & REVIEWS -->
+    <section class="work-reviews" id="work">
+      <div class="work-inner">
+        <h2>Recent Work & Customer Reviews</h2>
+        <p class="intro">
+          Browse a few of our recent projects, then see what your Lehigh Valley
+          neighbors are saying.
+        </p>
+
+        <!-- Photo Wheel / Carousel -->
+        <div class="carousel" aria-label="Project photo carousel">
+          <div class="carousel-track" id="carouselTrack">
+            <div class="slide">
+              <img
+                src="Clarendon Dr.png"
+                alt="Roof replacement before and after"
+              />
+            </div>
+            <div class="slide">
+              <img src="roof-replacement.jpg" alt="Completed shingle roof" />
+            </div>
+            <div class="slide">
+              <img src="siding.jpg" alt="New siding installation" />
+            </div>
+            <div class="slide">
+              <img src="gutters.jpg" alt="Seamless gutter install" />
+            </div>
+          </div>
+          <button class="carousel-btn prev" id="prevBtn" aria-label="Previous">
+            ❮
+          </button>
+          <button class="carousel-btn next" id="nextBtn" aria-label="Next">
+            ❯
+          </button>
+        </div>
+        <div class="dots" id="carouselDots" aria-hidden="true"></div>
+
+        <!-- Reviews -->
+        <div class="reviews">
+          <div class="google-rating">
+            <div class="stars">★★★★★</div>
+            <div class="score">4.9</div>
+            <div class="count">Based on 50+ Google reviews</div>
+          </div>
+          <div>
+            <div class="review-list">
+              <div class="review-card">
+                <div class="name">Danielle R.</div>
+                <div class="stars">★★★★★</div>
+                <div class="body">
+                  Professional, fast, and the roof looks fantastic.
+                  Communication was clear from estimate to final cleanup.
+                </div>
+              </div>
+              <div class="review-card">
+                <div class="name">Mark S.</div>
+                <div class="stars">★★★★★</div>
+                <div class="body">
+                  They diagnosed a tricky leak and had it fixed the same week.
+                  Fair price and great workmanship.
+                </div>
+              </div>
+              <div class="review-card">
+                <div class="name">Elena G.</div>
+                <div class="stars">★★★★★</div>
+                <div class="body">
+                  Replaced our old gutters and added guards — water issues gone.
+                  Highly recommend Fleck to anyone in Easton!
+                </div>
+              </div>
+            </div>
+            <div class="reviews-cta">
+              <a href="#" aria-label="Read more Google reviews"
+                >Read more on Google</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT & HOURS -->
+    <section class="contact-hours" id="contact">
+      <div class="contact-inner">
+        <div class="contact-card contact-info">
+          <h3>Contact Information</h3>
+          <p>
+            <strong>Address:</strong>
+            <a
+              href="https://www.google.com/maps?q=2100+Edgewood+Ave,+Easton,+PA+18045"
+              target="_blank"
+              >2100 Edgewood Ave, Easton, PA 18045</a
+            >
+          </p>
+          <p>
+            <strong>Phone:</strong>
+            <a href="tel:+16102500737">(610) 250-0737</a>
+          </p>
+          <p>
+            <strong>Service Area:</strong> Easton & the Greater Lehigh Valley,
+            PA
+          </p>
+        </div>
+        <div class="contact-card">
+          <h3>Hours of Operation</h3>
+          <table class="hours-table" aria-label="Business hours">
+            <tr>
+              <td>Monday</td>
+              <td style="text-align: right">7am – 5pm</td>
+            </tr>
+            <tr>
+              <td>Tuesday</td>
+              <td style="text-align: right">7am – 5pm</td>
+            </tr>
+            <tr>
+              <td>Wednesday</td>
+              <td style="text-align: right">7am – 5pm</td>
+            </tr>
+            <tr>
+              <td>Thursday</td>
+              <td style="text-align: right">7am – 5pm</td>
+            </tr>
+            <tr>
+              <td>Friday</td>
+              <td style="text-align: right">7am – 5pm</td>
+            </tr>
+            <tr>
+              <td>Saturday</td>
+              <td style="text-align: right">7am – 12pm</td>
+            </tr>
+            <tr>
+              <td>Sunday</td>
+              <td style="text-align: right">Closed</td>
+            </tr>
+          </table>
+        </div>
+        <div class="map-wrap" aria-label="Google map showing our location">
+          <iframe
+            src="https://www.google.com/maps?q=2100+Edgewood+Ave,+Easton,+PA+18045&output=embed"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        © 2025 Fleck Roofing & Construction |
+        <a
+          href="https://www.google.com/maps?q=2100+Edgewood+Ave,+Easton,+PA+18045"
+          target="_blank"
+          >2100 Edgewood Ave, Easton, PA 18045</a
+        >
+        | We're the Guys that Keep You Dry
+      </p>
+    </footer>
+    <a
+      class="sticky-text-btn"
+      href="sms:+16102500737"
+      aria-label="Text Fleck Roofing & Construction"
+      >💬 Text Us</a
+    >
+
+    <script>
+      // Simple Carousel Logic
+      const track = document.getElementById("carouselTrack");
+      const slides = Array.from(track.children);
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      const dotsWrap = document.getElementById("carouselDots");
+
+      let index = 0;
+
+      function updateCarousel() {
+        track.style.transform = `translateX(-${index * 100}%)`;
+        // update dots
+        Array.from(dotsWrap.children).forEach((d, i) =>
+          d.classList.toggle("active", i === index),
+        );
+      }
+
+      // Create dots
+      slides.forEach((_, i) => {
+        const d = document.createElement("div");
+        d.className = "dot" + (i === 0 ? " active" : "");
+        d.addEventListener("click", () => {
+          index = i;
+          updateCarousel();
+        });
+        dotsWrap.appendChild(d);
+      });
+
+      prevBtn.addEventListener("click", () => {
+        index = (index - 1 + slides.length) % slides.length;
+        updateCarousel();
+      });
+
+      nextBtn.addEventListener("click", () => {
+        index = (index + 1) % slides.length;
+        updateCarousel();
+      });
+
+      // Optional: auto-play
+      let auto = setInterval(() => {
+        index = (index + 1) % slides.length;
+        updateCarousel();
+      }, 5000);
+      [prevBtn, nextBtn, dotsWrap].forEach((el) =>
+        el.addEventListener("mouseenter", () => clearInterval(auto)),
+      );
+    </script>
+  </body>
+</html>
