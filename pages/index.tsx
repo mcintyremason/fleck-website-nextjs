@@ -7,7 +7,7 @@ import {
 
 import Content from "../components/Content";
 import Footer from "../components/Footer";
-import Header from "../components/Header";
+import HeaderBar from "../components/HeaderBar";
 import Layout from "../components/Layout";
 
 const theme = responsiveFontSizes(
@@ -32,10 +32,51 @@ const theme = responsiveFontSizes(
   }),
 );
 
+theme.typography.h1 = {
+  fontSize: "1.2em",
+  margin: 0,
+  [theme.breakpoints.up("lg")]: {
+    fontSize: "2em",
+  },
+};
+
+theme.typography.h2 = {
+  fontSize: ".9em",
+  margin: 0,
+  [theme.breakpoints.up("lg")]: {
+    fontSize: "1.5em",
+  },
+};
+
+theme.typography.h3 = {
+  fontSize: ".7em",
+  margin: 0,
+  [theme.breakpoints.up("lg")]: {
+    fontSize: "1.17em",
+  },
+};
+
+theme.typography.h4 = {
+  fontSize: ".6em",
+  margin: 0,
+  [theme.breakpoints.up("lg")]: {
+    fontSize: "1em",
+  },
+};
+
 theme.typography.h5 = {
-  fontSize: ".7rem",
-  [theme.breakpoints.up("md")]: {
-    fontSize: "24px",
+  fontSize: ".5em",
+  margin: 0,
+  [theme.breakpoints.up("lg")]: {
+    fontSize: ".83em",
+  },
+};
+
+theme.typography.h6 = {
+  fontSize: ".4em",
+  margin: 0,
+  [theme.breakpoints.up("lg")]: {
+    fontSize: ".67em",
   },
 };
 
@@ -47,7 +88,7 @@ const IndexPage = () => (
         itemScope
         itemType="http://schema.org/LocalBusiness"
       >
-        <Header />
+        <HeaderBar />
         <Content />
         <Footer />
       </Grid>
