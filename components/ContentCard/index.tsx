@@ -16,7 +16,7 @@ type ContentCardProps = {
   imgurl: string;
   title: string;
 } & React.HTMLAttributes<HTMLDivElement> &
-  Partial<Record<Breakpoint, boolean | GridSize>>;
+  Partial<Record<Breakpoint, GridSize>>;
 
 const ContentCard: React.FC<ContentCardProps> = (props) => {
   const { description, imgurl, title, xs, sm, md, lg, xl } = props;
@@ -24,12 +24,7 @@ const ContentCard: React.FC<ContentCardProps> = (props) => {
   return (
     <Grid
       className={classNames(styles["content-card-container"])}
-      item
-      xs={xs}
-      sm={sm}
-      md={md}
-      lg={lg}
-      xl={xl}
+      size={{ xs, sm, md, lg, xl }}
     >
       <Card>
         <Grid
