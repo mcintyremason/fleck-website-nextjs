@@ -17,9 +17,7 @@ const Content: React.FC<ContentProps> = (_: ContentProps) => (
     >
       <Grid
         container
-        item
-        xs={12}
-        md={6}
+        size={{ xs: 12, md: 6 }}
         justifyContent="space-evenly"
         alignItems="center"
         className={classNames(
@@ -34,9 +32,7 @@ const Content: React.FC<ContentProps> = (_: ContentProps) => (
       </Grid>
       <Grid
         container
-        item
-        xs={12}
-        md={6}
+        size={{ xs: 12, md: 6 }}
         justifyContent="space-evenly"
         alignItems="center"
         className={classNames(
