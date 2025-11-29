@@ -51,7 +51,7 @@ const IndexPage = () => (
               serviceImageText="Roof Repair"
               serviceDescription="Leak diagnostics, storm damage, missing shingles, flashing, & chimney repairs - we keep you dry."
               serviceImageButtonText="Learn More 🔍"
-              imageSrc="/img/assets/landing-page/roof-repair/roof-repair-2.jpg"
+              imageSrc="/img/assets/landing-page/roof-repair/roof-repair.jpg"
               imageHeight={420}
               imageWidth={764}
             />
