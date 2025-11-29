@@ -1,0 +1,13 @@
+.services {
+  padding: 50px 20px;
+}
+
+.services .service-title {
+  text-align: center;
+  font-size: 2em;
+}
+
+.services .service-title-subtext {
+  text-align: center;
+  padding: 10px 0 0;
+}

@@ -1,7 +1,8 @@
 /* Variables */
 :root {
-  --primary-color: #e43d30;
-  --secondary-color: #ffd040;
+  --primary-color: #ff0000;
+  --secondary-color: #ffd700;
+  --text-color: #000000;
   --border-primary: #000000;
   --background-primary: #ffffff;
   --background-secondary: #0f0f0f;
@@ -63,18 +64,7 @@ body {
 
 a {
   color: var(--primary-color);
-  border-color: var(--primary-color);
-  border-bottom: 3px solid;
-  transition: all 0.5s;
   text-decoration: none;
-}
-a:hover {
-  color: var(--secondary-color);
-  border-color: transparent;
-}
-a:focus {
-  color: var(--secondary-color);
-  border-color: transparent;
 }
 h1,
 h2,
@@ -82,7 +72,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--primary-color);
+  font-family: Arial, sans-serif;
 }
 h1,
 h2,
@@ -92,24 +82,6 @@ h5,
 h6,
 p {
   margin: 0;
-}
-h1 {
-  font-size: 1.75em;
-}
-h2 {
-  font-size: 1.5em;
-}
-h3 {
-  font-size: 1.25em;
-}
-h4 {
-  font-size: 1em;
-}
-h5 {
-  font-size: 0.9em;
-}
-h6 {
-  font-size: 0.8em;
 }
 li,
 p {

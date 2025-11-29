@@ -260,8 +260,8 @@
       }
       .service-media img {
         display: block;
-        width: 100%;
-        height: 100%;
+        width: 764px;
+        height: 420px;
         object-fit: cover;
       }
       .service-overlay {
@@ -286,7 +286,7 @@
         background: #ff0000;
         color: #fff;
         border: 2px solid #ff0000;
-        padding: 18px 28px;
+        padding: 10px 15px;
         border-radius: 6px;
         font-weight: bold;
         font-size: 1.3em;
@@ -522,7 +522,7 @@
     <header>
       <div class="branding">
         <img
-          src="Fleck - Main Logo - Capitalized-Enlarged.png"
+          src="file:///Users/mahun/repos/fleck-website-nextjs/public/img/logo/logo-1.png"
           alt="Fleck Roofing & Construction Logo"
         />
         <h1>Fleck Roofing & Construction</h1>
@@ -553,16 +553,35 @@
       <div class="estimate-form">
         <h3>Request a Free Estimate</h3>
         <form>
-          <input type="text" id="name" name="name" placeholder="Name" />
-          <input type="text" id="number" name="number" placeholder="Number" />
+          <input
+            type="text"
+            id="first-name"
+            name="first-name"
+            placeholder="First Name"
+            required
+          />
+          <input
+            type="text"
+            id="last-name"
+            name="last-name"
+            placeholder="Last Name"
+            required
+          />
+          <input
+            type="text"
+            id="phone-number"
+            name="phone-number"
+            placeholder="Phone Number"
+            required
+          />
+          <input type="email" id="email" name="email" placeholder="Email" />
           <input
             type="text"
             id="address"
             name="address"
             placeholder="Address"
           />
-          <input type="email" id="email" name="email" placeholder="Email" />
-          <select id="service" name="service">
+          <select id="service" name="service" required>
             <option value="" selected disabled>Select a Service Type</option>
             <option value="roof-replacement">Roof Replacement</option>
             <option value="roof-repair">Roof Repair</option>
@@ -576,14 +595,6 @@
             rows="4"
             placeholder="Notes"
           ></textarea>
-          <label for="photos">Upload Photos:</label>
-          <input
-            type="file"
-            id="photos"
-            name="photos"
-            accept="image/*"
-            multiple
-          />
           <button type="submit">Submit</button>
         </form>
       </div>
@@ -603,11 +614,14 @@
         <!-- Row 1: Roof Replacement (Image Left, Text Right) -->
         <div class="service-row">
           <div class="service-media">
-            <img src="roof-replacement.jpg" alt="Roof Replacement" />
+            <img
+              src="file:///Users/mahun/repos/fleck-website-nextjs/public/img/assets/landing-page/roof-replacement/roof-replacement-2.JPG"
+              alt="Roof Replacement"
+            />
             <div class="service-overlay">
               <h3>Roof Replacement</h3>
               <button onclick="selectService('roof-replacement')">
-                Get Estimate
+                Learn More 🔍
               </button>
             </div>
           </div>
@@ -628,11 +642,14 @@
             </p>
           </div>
           <div class="service-media">
-            <img src="roof-repair.jpg" alt="Roof Repair" />
+            <img
+              src="file:///Users/mahun/repos/fleck-website-nextjs/public/img/assets/landing-page/roof-repair/roof-repair-2.JPG"
+              alt="Roof Repair"
+            />
             <div class="service-overlay">
               <h3>Roof Repair</h3>
               <button onclick="selectService('roof-repair')">
-                Get Estimate
+                Learn More 🔍
               </button>
             </div>
           </div>
@@ -641,10 +658,13 @@
         <!-- Row 3: Siding (Image Left, Text Right) -->
         <div class="service-row">
           <div class="service-media">
-            <img src="siding.jpg" alt="Siding" />
+            <img
+              src="file:///Users/mahun/repos/fleck-website-nextjs/public/img/assets/landing-page/siding/siding-2.jpg"
+              alt="Siding"
+            />
             <div class="service-overlay">
               <h3>Siding</h3>
-              <button onclick="selectService('siding')">Get Estimate</button>
+              <button onclick="selectService('siding')">Learn More 🔍</button>
             </div>
           </div>
           <div class="service-copy">
@@ -666,10 +686,13 @@
             </p>
           </div>
           <div class="service-media">
-            <img src="gutters.jpg" alt="Gutters" />
+            <img
+              src="file:///Users/mahun/repos/fleck-website-nextjs/public/img/assets/landing-page/gutters/gutters-1.jpg"
+              alt="Gutters"
+            />
             <div class="service-overlay">
               <h3>Gutters</h3>
-              <button onclick="selectService('gutters')">Get Estimate</button>
+              <button onclick="selectService('gutters')">Learn More 🔍</button>
             </div>
           </div>
         </div>
@@ -677,11 +700,14 @@
         <!-- Row 5: Soffit & Fascia (Image Left, Text Right) -->
         <div class="service-row">
           <div class="service-media">
-            <img src="soffit-fascia.jpg" alt="Soffit & Fascia" />
+            <img
+              src="file:///Users/mahun/repos/fleck-website-nextjs/public/img/assets/landing-page/soffit-fascia/soffit-fascia-1.jpg"
+              alt="Soffit & Fascia"
+            />
             <div class="service-overlay">
               <h3>Soffit &amp; Fascia</h3>
               <button onclick="selectService('soffit-fascia')">
-                Get Estimate
+                Learn More 🔍
               </button>
             </div>
           </div>
@@ -916,9 +942,9 @@
     </footer>
     <a
       class="sticky-text-btn"
-      href="sms:+16102500737"
+      href="tel:+16102500737"
       aria-label="Text Fleck Roofing & Construction"
-      >💬 Text Us</a
+      >📱 Call Now</a
     >
 
     <script>

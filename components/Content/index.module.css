@@ -1,7 +1,6 @@
 .main-container {
   height: 100%;
   background-color: var(--background-primary);
-  padding: var(--mobile-header-height) 0 0;
   flex-flow: row nowrap;
 }
 
@@ -34,7 +33,7 @@
     height: -moz-calc(
       100% - var(--desktop-header-height) - var(--footer-height)
     );
-    padding: var(--desktop-header-height) 0 0;
+
     flex-flow: column nowrap;
   }
 

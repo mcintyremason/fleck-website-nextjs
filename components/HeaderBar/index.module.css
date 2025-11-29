@@ -1,0 +1,37 @@
+.header-bar-container {
+  padding: 10px 10px;
+}
+
+.header-bar-container .menu-title {
+  height: 100%;
+  padding: 0 10px;
+}
+
+.header-bar-container .logo {
+  max-width: 75px;
+  max-height: 150px;
+}
+
+.header-bar-container .logo-link {
+  border: none;
+}
+
+.header-bar-container .header-title-container .header-title {
+  display: none;
+}
+
+.header-bar-container .header-title-container .header-subtitle {
+  display: none;
+  font-style: italic;
+  color: var(--secondary-color);
+}
+
+@media only screen and (min-width: 769px) {
+  .header-bar-container .header-title-container .header-title {
+    display: flex;
+  }
+
+  .header-bar-container .header-title-container .header-subtitle {
+    display: flex;
+  }
+}
