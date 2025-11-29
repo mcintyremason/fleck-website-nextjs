@@ -1,0 +1,47 @@
+.image-with-overlay-container .media img {
+  display: block;
+  object-fit: cover;
+}
+
+.image-with-overlay-container .media {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.image-with-overlay-container .overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.45);
+  gap: 16px;
+}
+
+.image-with-overlay-container .overlay h3 {
+  margin: 0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.85);
+  text-align: center;
+  padding: 0 8px;
+  font-size: 2.8rem;
+  color: var(--secondary-color);
+}
+
+.image-with-overlay-container .overlay button {
+  background: var(--primary-color);
+  color: #fff;
+  border: 2px solid var(--primary-color);
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+
+.image-with-overlay-container .overlay button:hover {
+  background: #cc0000;
+  border-color: #cc0000;
+}

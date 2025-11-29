@@ -48,20 +48,16 @@ export const HeaderBar: React.FC = (_) => {
       className={styles["header-bar-container"]}
     >
       <Grid container justifyContent={"flex-end"}>
-        <Grid
-          // container
-          size={{ xs: 3, md: 3 }}
-          // direction="column"
-          // justifyContent="center"
-          className={styles["menu-title"]}
-        >
-          <Link href="/" className={styles["logo-link"]}>
-            <img
-              className={styles["logo"]}
-              src="/img/logo/logo-2.png"
-              alt="Fleck Roofing & Construction Logo"
-            />
-          </Link>
+        <Grid size={{ xs: 3, md: 3 }} className={styles["menu-title"]}>
+          <Grid container direction="column" justifyContent="center">
+            <Link href="/" className={styles["logo-link"]}>
+              <img
+                className={styles["logo"]}
+                src="/img/logo/logo-2.png"
+                alt="Fleck Roofing & Construction Logo"
+              />
+            </Link>
+          </Grid>
         </Grid>
         <Grid
           container

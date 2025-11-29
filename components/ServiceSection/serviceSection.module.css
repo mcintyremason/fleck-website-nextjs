@@ -1,0 +1,11 @@
+.service-section .service-content-container {
+  gap: 24px;
+  padding: 20px 0 50px;
+}
+
+.service-section .service-content-container p {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.85;
+  font-weight: normal;
+}
